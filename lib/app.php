@@ -5,10 +5,16 @@
   $iaJuego=new ia();
   $jsObj=new jsonObj($iaJuego);
   //Comprobación de accion
-  if(isset($_GET['fil'])){
-    $jsObj->generaNavePos($_GET['fil'],$_GET['col']);
-  }else{
-    $jsObj->generaNaveAle();
+  if(isset($_GET['accion'])){
+    if($_GET['accion']=='navesHumano'){
+          //Capturamos el numero de naves y generamos el array de naves
+          $numNavesHumanas=$_GET['numNaves'];
+          $iaJuego->setMapaCol($numNavesHumanas);
+          $iaJuego->setMapaFil($numNavesHumanas);
+          for($i=0;$i<$numNavesHumanas;$i++){
+            $iaJuego->setNaveHumana($_GET['tipo'.$i],$_GET['fil'.$i],$_GET['col'.$i]);
+          }
+    }
   }
-  $jsObj->devuelveNave();
+  $jsObj->devuelveNaves();
 ?>

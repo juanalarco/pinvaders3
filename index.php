@@ -10,7 +10,7 @@
   </head>
   <body ng-app="pInvApp" ng-controller="pInvAppCtrl">
     <div class="pure-g">
-        <div class="pure-u-1"><img src="img/pInvadersLogoF2.png" alt="Logo" class="logo"/></div>
+        <div class="pure-u-1"><img src="img/pInvadersLogoF3.png" alt="Logo" class="logo"/></div>
     </div>
     <div class="pure-g">
         <div class="pure-u-1-2">
@@ -18,7 +18,7 @@
             <center>
             <table>
               <tr ng-repeat="i in [0,1,2,3]">
-                <td ng-repeat="j in [0,1,2,3]"><img src={{imgs[i][j].img}} alt="celda" class="celda" ng-click="mueveNavePos(i,j)"/></td>
+                <td ng-repeat="j in [0,1,2,3]"><img src={{imgs[i][j].img}} alt="celda" class="celda"/></td>
               </tr>
             </table>
             </center>
@@ -28,25 +28,8 @@
           <p>
             <form class="pure-form pure-form-stacked">
               <fieldset>
-                <legend>MOVER NAVE</legend>
-                  <button type="submit" class="pure-button pure-button-primary" ng-click="mueveNave()">Mueve la nave</button>
-                  <button type="submit" class="pure-button pure-button-primary" ng-click="resetea()">Resetea</button>
-                </fieldset>
-              </form>
-          </p>
-          <p>
-            <form class="pure-form pure-form-aligned">
-              <fieldset>
-                <legend>MOVER NAVE A POSICION</legend>
-                  <div class="pure-control-group">
-                      <label for="col">Columna</label>
-                      <input id="col" type="text"  ng-model="naveActualColumna">
-                  </div>
-                  <div class="pure-control-group">
-                      <label for="fil">Fila</label>
-                      <input id="fil" type="text" ng-model="naveActualFila">
-                  </div>
-                  <button type="submit" class="pure-button pure-button-primary" ng-click=mueveNavePosInput(naveActualFila,naveActualColumna)>Mueve la nave</button>
+                <legend>INICIAR TABLERO</legend>
+                  <button type="submit" class="pure-button pure-button-primary" ng-click="inicioTablero()">Inicia Tablero</button>
                 </fieldset>
               </form>
           </p>
